@@ -74,9 +74,11 @@ async def handle_duration_choice(update: Update, context: CallbackContext) -> in
 import openai
 
 # הכנס את המפתח החדש שלך מ-OpenRouter
+import os
 import openai
 
-openai.api_key = "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"
+openai.api_key = os.getenv("OPENAI_API_KEY")  # לוקח את ה-API Key מהסביבה
+
 
 async def chat_with_gpt(update: Update, context: CallbackContext):
     user_message = update.message.text
