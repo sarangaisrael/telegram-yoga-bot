@@ -5,7 +5,7 @@ from telegram import Update, ReplyKeyboardMarkup, KeyboardButton
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, CallbackContext, ConversationHandler
 
 # 🛠 הכנס את ה-API Key שלך של OpenAI
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "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"
 openai.api_key = OPENAI_API_KEY
 
 # 🛠 שלבי השיחה של הבוט
