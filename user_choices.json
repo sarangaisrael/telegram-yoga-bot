@@ -1,0 +1,15 @@
+import json
+
+# פתיחת הקובץ
+with open('user_choices.json', 'r') as f:
+    # קריאת כל התוכן של הקובץ
+    data = f.readlines()
+
+# הצגת התוכן של הקובץ
+for line in data:
+    # המרת כל שורה (מילון JSON) לאובייקט Python והדפסתו
+    user_data = json.loads(line)
+    print(user_data)
+{"user_id": 397044301, "location": "\u05d1\u05de\u05e9\u05e8\u05d3", "duration": "5 \u05d3\u05e7\u05d5\u05ea"}
+{"user_id": 397044301, "location": "\u05d1\u05d1\u05d9\u05ea", "duration": "5 \u05d3\u05e7\u05d5\u05ea"}
+{"user_id": 397044301, "location": "\u05d1\u05d1\u05d9\u05ea", "duration": "5 \u05d3\u05e7\u05d5\u05ea"}
