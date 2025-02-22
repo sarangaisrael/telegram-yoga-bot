@@ -77,13 +77,15 @@ import openai
 import os
 import openai
 
-openai.api_key = os.getenv("OPENAI_API_KEY")  # לוקח את ה-API Key מהסביבה
+# בדיקה: הדפסת ה-API Key לוודא שהוא נטען
+api_key = os.getenv("OPENAI_API_KEY")
 
+if not api_key:
+    print("⚠️ ERROR: No API Key found in environment variables!")
+    exit(1)  # עצירת הבוט אם אין מפתח
 
-async def chat_with_gpt(update: Update, context: CallbackContext):
-    user_message = update.message.text
-    try:
-        client = openai.OpenAI(api_key=openai.api_key, base_url="https://openrouter.ai/api/v1")
+openai.api_key = api_key
+print(f"✅ API Key loaded: {api_key[:5]}...")  # מציג רק חלק מהמפתח כדי לא לחשוף אותו
 
         response = client.chat.completions.create(
             model="google/gemini-2.0-flash-001",  # שימוש ב-Gemini
